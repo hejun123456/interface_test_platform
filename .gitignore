@@ -1,0 +1,37 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.pyc
+AutoTest/__pycache__/
+interface_test/__pycache__/
+db.sqlite3
+.idea
+log/
+static/upload/
+interface_test/migrations/*.py
+
+frontend/.DS_Store
+frontend/node_modules/
+frontend/dist/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/test/unit/coverage/
+frontend/test/e2e/reports/
+frontend/selenium-debug.log
+
+# Editor directories and files
+frontend/.idea
+frontend/.vscode
+frontend/*.suo
+frontend/*.ntvs*
+frontend/*.njsproj
+frontend/*.sln
+node_modules/
+emailpic/
+mock_data/
+suite/
+
+celerybeat.pid
+celerybeat-schedule
+moco-runner-0.12.0-standalone.jar
+env_config.py
+render.html

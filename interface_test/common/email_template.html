@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动化测试报告</title>
+</head>
+<body>
+    <div>
+        <h3 class="center">{report_name}</h3>
+        <hr>
+        <div class="col">
+            <div class="center" style="padding: 15px; border-right: 1px solid #d0cfcf;">
+                <img src="cid:summarychart" alt="" style="width: 100%;">
+            </div>
+        </div>
+        <div class="col">
+            <div class="summary">
+                <div class="summary-item">
+                    <p class="center summary-title">测试概况</p>
+                </div>
+                <div class="summary-item">
+                    <span>运行环境：</span><strong style="color: #2d8cf0;">{base_url}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>用例总数：</span><strong style="color: #2d8cf0;">{sum}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>用例通过：</span><strong style="color: #19be6b;">{successes}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>用例失败：</span><strong style="color: #ff9900;">{failures}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>用例错误：</span><strong style="color: #ed4014;">{errors}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>用例跳过：</span><strong style="color: #2db7f5;">{skipped}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>开始时间：</span>{start_datetime}
+                </div>
+                <div class="summary-item">
+                    <span>运行时长：</span>{duration}
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+            <hr>
+            <div style="width: 100%;" class="center">
+                <div style="width: 50%;margin: auto;">
+                    <table style="width: 100%;" cellspacing="0" cellpadding="6" border="1" id="wrongcase">
+                        <caption class="summary-title">top 10 错误表</caption>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>错误名</th>
+                                <th>用例数</th>
+                                <th>错误用例占比</th>
+                                <th>错误详情</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {tbody}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    #wrongcase tr:nth-child(2n){
+        background-color:#efefef;
+    }
+    #wrongcase thead th {
+        background-color: #97cc65;
+    }
+    #wrongcase tbody tr:hover {
+        background-color: #caf7f9;
+    }
+    .center {
+        text-align: center;
+    }
+    .col {
+        display: inline-block;
+        width: 50%;
+        min-height: 400px;
+        float: left;
+        box-sizing: border-box;
+    }
+    .summary {
+        padding: 15px;
+        margin-top: 15px;
+    }
+    .summary-title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .summary-item {
+        margin: 5px;
+        padding-left: 30px;
+    }
+    .summary-item > span {
+        display: inline-block;
+        line-height: 40px;
+    }
+    .summary-item:hover {
+        cursor: pointer;
+        background-color: #efefef;
+    }
+    .clear {
+        clear: both;
+    }
+</style>
+</html>
