@@ -380,5 +380,53 @@ def wait_secs(n_secs):
     """
     time.sleep(n_secs)
 
+
+def randomget(choices_list, target_attr=None, target_value=None):
+    """
+    随机获取某个匹配对象
+    choices_list: 预期结构为[{}, {}]
+    :param choices_list:
+    :param target_attr:
+    :param target_value:
+    :return:
+    """
+    if len(choices_list) == 0:
+        return 'no match data'
+    if target_attr and target_value:
+        new_choices_list = []
+        for choice in choices_list:
+            if choice.get(target_attr) == target_value:
+                new_choices_list.append(choice)
+        if len(new_choices_list):
+            return random.choice(new_choices_list)
+        return 'no match data'
+    else:
+        return random.choice(choices_list)
+
+
+def collection_get(obj, attr, default=None):
+    """
+    从复杂的数据结构中提取字段数据
+    :param obj: 数据
+    :param attr: 字段路径, 列表/数组使用索引,字典使用key,多层路径以点连接.
+    :param default:取值失败时,返回的默认值
+    :return:字段数据
+    """
+    try:
+        if '.' in attr:
+            attr_path = attr.split('.')
+            for a in attr_path:
+                obj = obj[int(a)] if str.isdigit(a) else obj.get(a)
+                # 如果obj为None,则当前a是不存在的key
+                if obj is None:
+                    raise Exception('路径错误,{}不存在'.format(a))
+            # 遍历到最后,此即为目标取值
+            return obj
+        else:
+            return obj[int(attr)] if str.isdigit(attr) else obj.get(attr, default)
+    except Exception as e:
+        logger.error('数据获取失败，{}'.format(e))
+        return default or str(e)
+
 if __name__ == '__main__':
     pass
