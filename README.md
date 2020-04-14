@@ -110,9 +110,9 @@ pip install --upgrade https://github.com/celery/celery/tarball/master
 ```
 7. 解压phantomjs, 配置环境变量, 命令行输入phantomjs不报错即可
 8. 安装jdk，为了运行mock服务，如不需要mock服务可跳过
-9. 下载moco.jar到工程根目录,新命令行切换到工程根目录,运行服务
+9. 下载最新版本[moco.jar](https://repo1.maven.org/maven2/com/github/dreamhead/moco-runner/1.1.0/)到工程根目录,新命令行切换到工程根目录,运行服务
 ```
-java -jar moco-runner-0.12.0-standalone.jar http -p 8899 -c mock_data/settings.json
+java -jar moco-runner-X.X.X-standalone.jar http -p 8899 -c mock_data/settings.json
 ```
 10. 切换到工程根目录（manage.py所在目录）
 ```
