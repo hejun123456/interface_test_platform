@@ -159,7 +159,7 @@ celery flower #启动任务后台
 ![7-2-快速调试.png](https://images.gitee.com/uploads/images/2020/0327/120148_ed0e465a_5217681.png)
 ![7-3-一键提取.png](https://images.gitee.com/uploads/images/2020/0327/120148_3d513828_5217681.png)
 ![7-3-一键提取效果.png](https://images.gitee.com/uploads/images/2020/0327/120149_17f51665_5217681.png)
-![7-4-参数化](https://gitee.com/scu-zrb/interface_test_platform/blob/master/image/7-4-params-usage.png)
+![7-4-参数化](https://images.gitee.com/uploads/images/2020/0502/215227_8ade8aad_5217681.png "7-4-params-usage.png")
 
 8. 添加及触发任务
 ![8-1-添加任务.png](https://images.gitee.com/uploads/images/2020/0327/120148_f6321c37_5217681.png)
