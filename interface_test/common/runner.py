@@ -142,6 +142,7 @@ def load_testcase(case_id, test_project_path, base_url=None):
         """
         # info 样例数据：[['3', 'getblog_setting'], ['4', 'xxxxxxxblogs']]
         nonlocal error_msg
+        nonlocal params_files
         return_list = []
 
         for single_req in info:
@@ -150,6 +151,7 @@ def load_testcase(case_id, test_project_path, base_url=None):
                 tc_object = TestCase.objects.get(id=req_id)
                 current_before = eval(tc_object.before)
                 current_after = eval(tc_object.after)
+                current_params_file = eval(tc_object.params_files)
                 current_req = eval(tc_object.request.replace('true', 'True').replace('false', 'False'))
                 temp_list = []
                 # 前置步骤非空则递归，返回结果为列表，使用extend增加到临时列表中
@@ -160,6 +162,9 @@ def load_testcase(case_id, test_project_path, base_url=None):
                 # 同前置步骤
                 if current_after:
                     temp_list.extend(get_pre_and_post_req(current_after))
+                # 追加前后置步骤的参数文件
+                if current_params_file:
+                    params_files.extend(current_params_file)
                 # 当前前置步骤的前中后步骤作为整体拓展到结果列表中
                 return_list.extend(temp_list)
 
