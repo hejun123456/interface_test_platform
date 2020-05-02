@@ -160,6 +160,7 @@ celery flower #启动任务后台
 ![7-3-一键提取.png](https://images.gitee.com/uploads/images/2020/0327/120148_3d513828_5217681.png)
 ![7-3-一键提取效果.png](https://images.gitee.com/uploads/images/2020/0327/120149_17f51665_5217681.png)
 
+
 8. 添加及触发任务
 ![8-1-添加任务.png](https://images.gitee.com/uploads/images/2020/0327/120148_f6321c37_5217681.png)
 ![8-2-运行任务.png](https://images.gitee.com/uploads/images/2020/0327/120149_007cf974_5217681.png)
