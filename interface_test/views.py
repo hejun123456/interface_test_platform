@@ -35,7 +35,9 @@ def check_result(request):
 
     res = AsyncResult(task_id)
     if res.ready(): # 检查指定任务是否已经完成
-        return Response(res.result) # res.result为任务函数的返回值，即任务结果
+        if res.successful():
+            return Response(res.result) # res.result为任务函数的返回值，即任务结果
+        return Response({'message': '任务运行错误：{}'.format(res.result)})
     return Response({'message': '任务运行中，稍后查看...'})
 
 
