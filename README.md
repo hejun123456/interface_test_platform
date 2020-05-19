@@ -26,16 +26,16 @@ BTest是一个接口测试平台, 能帮助用户高效快捷地完成接口自�
 
 win开发环境搭建
 --------
-####一、项目结构
+#### 一、项目结构
 1. 项目结构
-![BTest接口测试平台20190808.png](https://upload-images.jianshu.io/upload_images/18974918-71f07a188af57c79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![BTest接口测试平台20190808.png](https://images.gitee.com/uploads/images/2020/0327/120147_0b3e8204_5217681.png)
 
 
 2. 目录说明: 前端代码放在后端代码根目录中
-![前端目录结构.png](https://upload-images.jianshu.io/upload_images/18974918-1e416781535b5b72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![后端目录结构.png](https://upload-images.jianshu.io/upload_images/18974918-fc6b2857367f98f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![前端目录结构.png](https://images.gitee.com/uploads/images/2020/0327/120148_b158175c_5217681.png)
+![后端目录结构.png](https://images.gitee.com/uploads/images/2020/0327/120148_03207018_5217681.png)
 
-####二、前端环境
+#### 二、前端环境
 1. 安装node.js/npm并配置环境
 2. 配置淘宝镜像 
 ```
@@ -54,7 +54,7 @@ cnpm install
 npm run dev
 ```
 
-####三、后端环境
+#### 三、后端环境
 1. 安装mysql，创建数据库dbname，设置用户名、密码，启动mysql
 2. 修改:AutoTest/settings.py里DATABASES字典和邮件配置
 ```
@@ -110,9 +110,9 @@ pip install --upgrade https://github.com/celery/celery/tarball/master
 ```
 7. 解压phantomjs, 配置环境变量, 命令行输入phantomjs不报错即可
 8. 安装jdk，为了运行mock服务，如不需要mock服务可跳过
-9. 下载moco.jar到工程根目录,新命令行切换到工程根目录,运行服务
+9. 下载最新版本[moco.jar](https://repo1.maven.org/maven2/com/github/dreamhead/moco-runner/1.1.0/)到工程根目录,新命令行切换到工程根目录,运行服务
 ```
-java -jar moco-runner-0.12.0-standalone.jar http -p 8899 -c mock_data/settings.json
+java -jar moco-runner-X.X.X-standalone.jar http -p 8899 -c mock_data/settings.json
 ```
 10. 切换到工程根目录（manage.py所在目录）
 ```
@@ -137,43 +137,44 @@ celery flower #启动任务后台
 功能介绍
 --------
 1.  注册新用户,成功后自动登录跳转,前台只能注册为普通用户.而管理员用户可以通过admin后台创建或修改.
-![1-登录.png](https://upload-images.jianshu.io/upload_images/18974918-c9a3cb0e1fa1c99f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![1-登录.png](https://images.gitee.com/uploads/images/2020/0327/120148_a584db28_5217681.png)
 
 2. 首页为数据面板,菜单按测试管理-数据管理-报告管理,划为三个模块
-![2-面板.png](https://upload-images.jianshu.io/upload_images/18974918-b80db738d588c4c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![2-面板.png](https://images.gitee.com/uploads/images/2020/0327/120148_cba05a24_5217681.png)
 
 3. 平台按项目-模块-用例的层级管理,要依次创建对应的条目
-![3-项目-模块-用例.png](https://upload-images.jianshu.io/upload_images/18974918-50c53d1313c2d293.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![3-项目-模块-用例.png](https://images.gitee.com/uploads/images/2020/0327/120148_84670858_5217681.png)
 
 4. 多数模块都提供了搜索栏
-![4-搜索栏.png](https://upload-images.jianshu.io/upload_images/18974918-51d8d06d90f01967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![4-搜索栏.png](https://images.gitee.com/uploads/images/2020/0327/120148_11530f27_5217681.png)
 
 5. 项目/模块/用例均提供了批量运行的方式, 而用例也可以单独运行和快速调试
-![5-运行方式.png](https://upload-images.jianshu.io/upload_images/18974918-4127a884f4248672.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![5-运行方式.png](https://images.gitee.com/uploads/images/2020/0327/120148_ecefbca9_5217681.png)
 
 6. debugtalk页面, 为每个项目绑定一份自定义函数或变量(下版本改为多项目共用debugtalk), 可在线编辑, 遵循python语法.
-![6-1-debug.png](https://upload-images.jianshu.io/upload_images/18974918-6d2fbf8bccf531e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![6-1-debug.png](https://images.gitee.com/uploads/images/2020/0327/120148_bd07778d_5217681.png)
 
 7. 用例嵌套引用/快速调试/结果一键提取
-![7-1-嵌套引用](https://upload-images.jianshu.io/upload_images/18974918-6e2f62e44b573c9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![7-2-快速调试.png](https://upload-images.jianshu.io/upload_images/18974918-96462e67fc21032d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![7-3-一键提取.png](https://upload-images.jianshu.io/upload_images/18974918-2b7071eeb0a9c92b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![7-3-一键提取效果.png](https://upload-images.jianshu.io/upload_images/18974918-cc1559d25317295e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![7-1-嵌套引用](https://images.gitee.com/uploads/images/2020/0327/120148_5042f184_5217681.png)
+![7-2-快速调试.png](https://images.gitee.com/uploads/images/2020/0327/120148_ed0e465a_5217681.png)
+![7-3-一键提取.png](https://images.gitee.com/uploads/images/2020/0327/120148_3d513828_5217681.png)
+![7-3-一键提取效果.png](https://images.gitee.com/uploads/images/2020/0327/120149_17f51665_5217681.png)
+![7-4-参数化](https://images.gitee.com/uploads/images/2020/0502/215227_8ade8aad_5217681.png "7-4-params-usage.png")
 
 8. 添加及触发任务
-![8-1-添加任务.png](https://upload-images.jianshu.io/upload_images/18974918-4c9ff879f9c3031f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![8-2-运行任务.png](https://upload-images.jianshu.io/upload_images/18974918-1d55d4d9a89fe626.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![8-1-添加任务.png](https://images.gitee.com/uploads/images/2020/0327/120148_f6321c37_5217681.png)
+![8-2-运行任务.png](https://images.gitee.com/uploads/images/2020/0327/120149_007cf974_5217681.png)
 
 9. 数据管理, 提供多种形式保存用例数据, 做到数据与用例分离的目的
-![9-1-数据管理.png](https://upload-images.jianshu.io/upload_images/18974918-48e0251906229ab8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![9-1-数据管理.png](https://images.gitee.com/uploads/images/2020/0327/120149_9ce809e1_5217681.png)
 
 10. MOCK服务基于[moco](https://github.com/dreamhead/moco)运行
-![10-1-新增接口.png](https://upload-images.jianshu.io/upload_images/18974918-7a8a9ebb975339d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![10-2-新增场景.png](https://upload-images.jianshu.io/upload_images/18974918-c08df3728a3d3210.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![10-1-新增接口.png](https://images.gitee.com/uploads/images/2020/0327/120149_16fe9742_5217681.png)
+![10-2-新增场景.png](https://images.gitee.com/uploads/images/2020/0327/120149_b1e33eff_5217681.png)
 
 11. 测试报告及邮件
-![11-1-报告详情.png](https://upload-images.jianshu.io/upload_images/18974918-4bece907199040f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![11-2-邮件.png](https://upload-images.jianshu.io/upload_images/18974918-957b48a07e21b9ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![11-1-报告详情.png](https://images.gitee.com/uploads/images/2020/0327/120149_eb22d2a0_5217681.png)
+![11-2-邮件.png](https://images.gitee.com/uploads/images/2020/0327/120149_a972de04_5217681.png)
 
 下版本待实现
 ------
@@ -182,3 +183,4 @@ celery flower #启动任务后台
 3. 用例重试机制
 4. 任务中错误用例一键重试
 5. 用例草稿/回收站
+6. 自动化文字用例与脚本关联及场景覆盖率统计
