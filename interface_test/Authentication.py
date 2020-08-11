@@ -1,4 +1,4 @@
-from rest_framework.authentication import BaseAuthentication
+from rest_framework.authentication import BaseAuthentication, get_authorization_header
 from rest_framework import status
 from rest_framework.exceptions import APIException
 from django.utils.translation import ugettext_lazy as _
@@ -39,7 +39,7 @@ class AuthenticationView(BaseAuthentication):
     认证类
     """
     def authenticate(self, request):
-        token = request._request.headers.get('authorization', None)
+        token = get_authorization_header(request).decode()
         try:
             token_obj = Token.objects.get(token=token)
             is_token_valid(token_obj)

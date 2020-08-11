@@ -249,7 +249,7 @@ def run_case(test_root_path, gen_report=False, report_name=None):
     }
     runner = HttpRunner(**kwargs)
     runner.run(test_root_path)
-    # shutil.rmtree(test_root_path)
+    shutil.rmtree(test_root_path)
     if gen_report:
         report_name = report_name or None
         runner.gen_html_report(html_report_name=report_name)
