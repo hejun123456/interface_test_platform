@@ -6,9 +6,9 @@ from celery import Celery
 
 from django.conf import settings
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AutoTest.settings') # 项目的settings文件
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'interface_test_platform.settings') # 项目的settings文件
 
-app = Celery('AutoTest') # 项目名为入参
+app = Celery('interface_test_platform') # 项目名为入参
 
 app.config_from_object('django.conf:settings') # 读取settings中的celery配置
 

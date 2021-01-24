@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from AutoTest import settings
+from interface_test_platform import settings
 from interface_test.common.runner import prepare_case, run_case, load_testcase
 from interface_test.tasks import async_run, periodic_run
 from interface_test.common.common import timestamp_to_datetime, bytes2str, tidy_tree_data, check_testcase_isRecursion

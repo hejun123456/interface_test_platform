@@ -1,5 +1,5 @@
 import os
-from AutoTest import settings
+from interface_test_platform import settings
 from interface_test.models import InterfaceMock, SceneMock
 from interface_test.common.file_operate import to_json_file
 
