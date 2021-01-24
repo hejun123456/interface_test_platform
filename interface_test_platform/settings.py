@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'interface_test',
     'corsheaders',
     'djcelery',
-    'django_filters',
+    'django_filter',
 ]
 
 MIDDLEWARE = [
@@ -179,7 +179,7 @@ REST_FRAMEWORK = {
         'interface_test.Authentication.AuthenticationView',
     ],
     'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend',
+        'django_filter.rest_framework.DjangoFilterBackend',
     ),
     # 分页设置
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -252,7 +252,7 @@ LOGGING = {
 }
 
 # 邮件配置
-EMAIL_SERVER = 'smtp.qq.com' # 邮箱服务器
-EMAIL_PORT = 465 # 邮箱服务器端口
+EMAIL_SERVER = 'smtp.qq.com'  # 邮箱服务器
+EMAIL_PORT = 465  # 邮箱服务器端口
 EMAIL_SENDER = '123456@qq.com' # 发件人
 EMAIL_PASSWORD = '' # 发件人密码

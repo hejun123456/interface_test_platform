@@ -22,7 +22,7 @@ app_name = 'interface_test'
 
 
 urlpatterns = (
-    path('check/', check_result), # 结果检查
+    path('check/', check_result),  # 结果检查
     path('getfuncs/', get_all_func), # 结果检查
     path('debug/', run_test.DebugView.as_view()), # 同步调用
     path('test/', run_test.TestView.as_view()), # 异步调用
